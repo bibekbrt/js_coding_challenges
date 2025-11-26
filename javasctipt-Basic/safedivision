@@ -1,0 +1,22 @@
+const divideval = (a, b) => {
+  // Explicit type conversion
+  const numA = Number(a);
+  const numB = Number(b);
+
+  // Validate inputs
+  if (isNaN(numA) || isNaN(numB)) {
+    return "Invalid";
+  }
+
+  // Check divide-by-zero
+  if (numB === 0) {
+    return "Invalid (divide by 0)";
+  }
+
+  return numA / numB;
+};
+
+divideval("10", "2");   // 5
+divideval(10, 0);       // "Invalid (divide by 0)"
+divideval("abc", 3);    // "Invalid"
+divideval(9, "3");      // 3
